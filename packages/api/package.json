@@ -1,0 +1,21 @@
+{
+  "name": "api",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build ./src/index.ts --outdir ./dist --target bun",
+    "start": "bun run ./dist/index.js",
+    "serve": "bun run build && bun run start"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "hono": "^4.5.9",
+    "zod": "^3.23.8"
+  }
+}
