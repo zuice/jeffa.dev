@@ -1,6 +1,9 @@
 ---
 import "../../styles/globals.css";
-import { Landing } from "@/layout/Landing";
+import { Separator } from "@/components/ui/separator";
+import Landing from "@/layout/Landing.astro";
+import Me from "@/components/Me.astro";
+import Bio from "@/components/Bio.astro";
 ---
 
 <script is:inline>
@@ -24,7 +27,21 @@ import { Landing } from "@/layout/Landing";
 
 <!DOCTYPE html>
 <html lang="en">
-	<body>
-    <Landing />
-	</body>
+  <head>
+    <title>Hi! | jeffa.dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="I'm a full stack developer with a passion for building scalable, performant, and secure web applications. Always looking to expand my skillset and explore new boundaries in the world of web development.">
+    <meta name="keywords" content="HTML, CSS, JavaScript, Astro, Next.js, Tailwind, React, PostgreSQL, Node.js, TypeScript, Bun, Hono">
+    <meta name="author" content="Jeffrey Allen">
+  </head>
+  <body>
+    <Landing>
+      <div class="w-[50rem] flex flex-col gap-2 max-md:w-full">
+        <Me />
+        <Bio />
+        <Separator className="mt-2" />
+      </div>
+    </Landing>
+  </body>
 </html>
