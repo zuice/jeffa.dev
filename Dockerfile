@@ -11,7 +11,7 @@ COPY package*.json bun.lockb* ./
 COPY packages ./packages
 
 # Install dependencies
-RUN bun install --frozen-lockfile
+RUN bun install
 
 # Build the Astro static files
 RUN cd packages/web && bun run build
