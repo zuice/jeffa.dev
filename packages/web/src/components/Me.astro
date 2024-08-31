@@ -1,18 +1,25 @@
 ---
 import { Image } from "astro:assets";
 
-import Paragraph from "@/components/Paragraph.astro";
+import { cn } from "@/lib/utils";
+
+const HEADER_CLASS =
+  "font-extrabold antialiased inline-block text-transparent bg-clip-text leading-tight";
 ---
 
-<div class="w-full flex flex-col gap-2">
+<div>
   <Image width={80} height={80} src="/me2.png" alt="Jeffa" class="w-[7rem] h-[7rem] rounded-full border-white border-4 border-solid mb-4 grayscale" />
   <div class="flex flex-col gap-2">
     <h1 class="text-[4rem] font-extrabold antialiased leading-none max-sm:text-[2rem]">
       Hello! I'm Jeff.
     </h1>
-    <Paragraph>
-      I am a full stack developer based in Southern California. Feel free to
-      reach out; I would love to hear about your project!
-    </Paragraph>
+    <div class="w-full flex flex-col items-start justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 bg-clip-text leading-none">
+      <h1 class={cn(HEADER_CLASS, "text-[3rem]", "max-sm:text-[2rem]")}>
+        Innovating on the web
+      </h1>
+      <h2 class={cn(HEADER_CLASS, "text-[2rem]", "max-sm:text-[1.5rem]")}>
+        From concept to culmination
+      </h2>
+    </div>
   </div>
 </div>

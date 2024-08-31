@@ -1,0 +1,23 @@
+---
+import { GithubIcon, HammerIcon } from "lucide-react";
+
+import { Separator } from "@/components/ui/separator";
+import Paragraph from "@/components/Paragraph.astro";
+---
+
+<li class="w-[30rem] h-[15rem] my-2 p-2 flex flex-col gap-2 flex-shrink-0 rounded-md border-8 border-solid border-border relative">
+  <h3 class="text-xl z-10 font-semibold flex gap-2 items-center"><HammerIcon /> jeffa.dev</h3>
+  <Separator />
+  <Paragraph class="z-10 text-md">
+    This project is of course the site you're looking at right now. It's
+    semi-statically generated with Astro (static with some dynamic bits) and
+    I intend to over-engineer it to show off some skills I've been learning.
+  </Paragraph>
+  <ul class="flex absolute bottom-2 left-2 right-2">
+    <a href="https://github.com/zuice/jeffa.dev" target="_blank" rel="noopener noreferrer" class="flex-grow-0 border-b border-1 border-border hover:text-muted-foreground">
+      <li class="flex items-center gap-1 text-sm">
+        <GithubIcon size={14} /> GitHub <span class="text-xs">↗</span>
+      </li>
+    </a>
+  </ul>
+</li>

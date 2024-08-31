@@ -4,20 +4,14 @@ import { BuildingIcon, GithubIcon } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "@/components/ModeToggle";
-
-const HEADER_CLASS =
-  "font-extrabold antialiased inline-block text-transparent bg-clip-text leading-tight";
+import Paragraph from "@/components/Paragraph.astro";
 ---
 
 <div class="w-full flex flex-col items-start justify-center gap-4">
-  <div class="w-full flex flex-col items-start justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 bg-clip-text leading-none">
-    <h1 class={cn(HEADER_CLASS, "text-[3rem]", "max-sm:text-[2rem]")}>
-      Innovating on the web
-    </h1>
-    <h2 class={cn(HEADER_CLASS, "text-[2rem]", "max-sm:text-[1.5rem]")}>
-      From concept to culmination
-    </h2>
-  </div>
+  <Paragraph class="text-xl">
+    I am a full stack developer based in Southern California. Feel free to
+    reach out; I would love to hear about your project!
+  </Paragraph>
   <div class="w-full flex items-start gap-4">
     <Button className="flex gap-2"><BuildingIcon /> Let's get to work</Button>
     <a class={cn(buttonVariants({ variant: "secondary" }), "flex gap-2")} href="https://github.com/zuice" target="_blank" rel="noopener noreferrer">

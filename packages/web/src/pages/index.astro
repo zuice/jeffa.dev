@@ -1,9 +1,12 @@
 ---
-import "../../styles/globals.css";
 import { Separator } from "@/components/ui/separator";
+
+import "../../styles/globals.css";
 import Landing from "@/layout/Landing.astro";
 import Me from "@/components/Me.astro";
 import Bio from "@/components/Bio.astro";
+import Projects from "@/components/Projects.astro";
+import GuestBook from "@/components/Guestbook.astro";
 ---
 
 <script is:inline>
@@ -29,7 +32,7 @@ import Bio from "@/components/Bio.astro";
 <html lang="en">
   <head>
     <title>Hi! | jeffa.dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
     <meta name="description" content="I'm a full stack developer with a passion for building scalable, performant, and secure web applications. Always looking to expand my skillset and explore new boundaries in the world of web development.">
     <meta name="keywords" content="HTML, CSS, JavaScript, Astro, Next.js, Tailwind, React, PostgreSQL, Node.js, TypeScript, Bun, Hono">
@@ -41,6 +44,9 @@ import Bio from "@/components/Bio.astro";
         <Me />
         <Bio />
         <Separator className="mt-2" />
+        <Projects />
+        <Separator className="mt-2" />
+        <GuestBook />
       </div>
     </Landing>
   </body>

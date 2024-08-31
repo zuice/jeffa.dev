@@ -1,3 +1,7 @@
-<p class="text-xl font-thin text-muted-foreground">
+---
+const { class: className = "" } = Astro.props;
+---
+
+<p class={`font-thin text-muted-foreground ${className}`}>
   <slot />
 </p>
