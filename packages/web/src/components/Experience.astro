@@ -1,0 +1,44 @@
+---
+import { BriefcaseBusinessIcon, Laptop2Icon } from "lucide-react";
+
+import Title from "@/components/Title.astro";
+import CardList from "@/components/CardList.astro";
+import Card from "@/components/Card.astro";
+---
+
+<Title subText="Where I've worked.">
+  <BriefcaseBusinessIcon /> Work Experience
+</Title>
+<CardList>
+  <Card
+    type="experience"
+    title="ZOIC Labs"
+    subTitle="Software Engineer | May 2020-Present"
+    text={`
+      Most notably I played a key role on a project that involved a
+      live data feed pushing images to a React frontend/Node.js backend.
+      Behind the scenes we had a python service running, making transformations
+      and adding text to the images as they were streamed.
+    `}
+  />
+  <Card
+    type="experience"
+    title="Abenaki"
+    subTitle="Software Engineer | Jan 2016-Jan 2020"
+    text={`
+      Worked as a sole developer on converting an Access DB to a modern
+      web UI. I used React, Redux, Node.js, and Postgresql to achieve this
+      task.
+    `}
+  />
+  <Card
+    type="experience"
+    title="Skillsoft"
+    subTitle="Web Developer (Contract) | Sep 2018-Mar 2019"
+    text={`
+      Worked as a sole developer on converting an Access DB to a modern
+      web UI. I used React, Redux, Node.js, and Postgresql to achieve this
+      task.
+    `}
+  />
+</CardList>

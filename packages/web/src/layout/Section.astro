@@ -1,0 +1,27 @@
+---
+import { WorkflowIcon } from "lucide-react";
+
+import CardList from "@/components/CardList.astro";
+import Card from "@/components/Card.astro";
+import SubTitle from "@/components/Title.astro";
+
+interface Props {
+  title: string;
+  subText?: string;
+}
+
+const { title, subText, icon } = Astro.props;
+---
+
+
+
+<section>
+  <SubTitle subText={subText}>
+    {icon} {title}
+  </SubTitle>
+  <CardList>
+    <Card />
+    <Card />
+    <Card />
+  </CardList>
+</section>

@@ -1,15 +1,37 @@
 ---
 import { WorkflowIcon } from "lucide-react";
 
+import CardList from "@/components/CardList.astro";
 import Card from "@/components/Card.astro";
-import SubTitle from "@/components/SubTitle.astro";
+import SubTitle from "@/components/Title.astro";
+
+const type = "project";
 ---
 
 <SubTitle subText="What I've been working on lately.">
   <WorkflowIcon /> Projects
 </SubTitle>
-<ul class="max-w-full flex gap-2 overflow-x-auto">
-  <Card />
-  <Card />
-  <Card />
-</ul>
+<CardList>
+  <Card
+    type={type}
+    title="jeffa.dev"
+    subTitle="About"
+    text={`
+      This project is of course the site you're looking at right now. It's
+      semi-statically generated with Astro (static with some dynamic bits) and
+      I intend to over-engineer it to show off some skills I've been learning."
+    `}
+    githubUrl="https://github.com/zuice/jeffa.dev"
+  />
+  <Card
+    type={type}
+    title="More coming soon..."
+    subTitle="Stay tuned!"
+    text={`
+      I'm always expanding my horizons and learning new things. I will keep
+      updating with more projects, I have plenty over on my GitHub profile
+      that can be looked at that I do not feel are worthy of being listed
+      here.
+    `}
+  />
+</CardList>
