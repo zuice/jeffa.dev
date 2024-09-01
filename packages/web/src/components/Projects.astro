@@ -5,7 +5,7 @@ import CardList from "@/components/CardList.astro";
 import Card from "@/components/Card.astro";
 import SubTitle from "@/components/Title.astro";
 
-const type = "project";
+const TYPE = "project";
 ---
 
 <SubTitle subText="What I've been working on lately.">
@@ -13,25 +13,38 @@ const type = "project";
 </SubTitle>
 <CardList>
   <Card
-    type={type}
+    type={TYPE}
     title="jeffa.dev"
     subTitle="About"
     text={`
       This project is of course the site you're looking at right now. It's
       semi-statically generated with Astro (static with some dynamic bits) and
-      I intend to over-engineer it to show off some skills I've been learning."
+      I intend to over-engineer it to show off some skills I've been learning.
     `}
     githubUrl="https://github.com/zuice/jeffa.dev"
   />
   <Card
-    type={type}
-    title="More coming soon..."
-    subTitle="Stay tuned!"
+    type={TYPE}
+    title="Budj"
+    subTitle="About (Currently private)"
     text={`
-      I'm always expanding my horizons and learning new things. I will keep
-      updating with more projects, I have plenty over on my GitHub profile
-      that can be looked at that I do not feel are worthy of being listed
-      here.
+      This project is built with Next.js, tRPC, TypeScript, and Prisma w/ Postgresql.
+      It's a budgeting app for businesses in which they can track planned spend
+      throughout their fiscal year. It's currently private, but if mentioned
+      I'll be happy to share the code.
     `}
   />
+  <Card
+    type={TYPE}
+    title="edg.sh"
+    subTitle="About"
+    text={`
+      This is a simple URL shortener I built a while back. It's built with
+      Next.js and Node.js/GraphQL. The stack is a bit outdated but I think
+      it still holds up well. I integrated with Stripe and used my hand-rolled
+      authentication system.
+    `}
+    githubUrl="https://github.com/zuice/edg.sh"
+  />
 </CardList>
+<small class="text-muted-foreground font-thin">Scrollable &rarr;</small>

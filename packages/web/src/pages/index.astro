@@ -1,7 +1,5 @@
 ---
 import { Separator } from "@/components/ui/separator";
-
-import "../../styles/globals.css";
 import Landing from "@/layout/Landing.astro";
 import Me from "@/components/Me.astro";
 import Bio from "@/components/Bio.astro";
@@ -10,46 +8,12 @@ import Projects from "@/components/Projects.astro";
 import GuestBook from "@/components/Guestbook.astro";
 ---
 
-<script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
-
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
-</script>
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Hi! | jeffa.dev</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <meta name="description" content="I'm a full stack developer with a passion for building scalable, performant, and secure web applications. Always looking to expand my skillset and explore new boundaries in the world of web development.">
-    <meta name="keywords" content="HTML, CSS, JavaScript, Astro, Next.js, Tailwind, React, PostgreSQL, Node.js, TypeScript, Bun, Hono">
-    <meta name="author" content="Jeffrey Allen">
-  </head>
-  <body>
-    <Landing>
-      <div class="w-[50rem] flex flex-col gap-2 max-md:w-full">
-        <Me />
-        <Bio />
-        <Experience />
-        <Separator className="mt-2" />
-        <Projects />
-        <Separator className="mt-2" />
-        <GuestBook />
-      </div>
-    </Landing>
-  </body>
-</html>
+<Landing>
+  <Me />
+  <Bio />
+  <Experience />
+  <Separator className="mt-2" />
+  <Projects />
+  <Separator className="mt-2" />
+  <GuestBook />
+</Landing>
