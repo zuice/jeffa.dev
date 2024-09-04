@@ -9,10 +9,12 @@ interface Props {
   title: string;
   subTitle: string;
   text: string;
+  url?: string;
   githubUrl?: string;
 }
 
-const { type, title, subTitle, text, githubUrl } = Astro.props satisfies Props;
+const { type, title, subTitle, text, url, githubUrl } =
+  Astro.props satisfies Props;
 ---
 
 <li class="w-[25rem] h-[20rem] my-2 p-2 flex flex-col gap-2 flex-shrink-0 rounded-md border-8 border-solid border-border relative max-sm:w-[calc(100%+2rem)]">
@@ -22,11 +24,18 @@ const { type, title, subTitle, text, githubUrl } = Astro.props satisfies Props;
     {title}
   </h3>
   <Separator />
-  <h4 class="text-lg">{subTitle}</h4>
+  <h4 class="text-lg text-muted-foreground font-semibold">{subTitle}</h4>
   <Paragraph class="z-10 text-md">
     {text}
   </Paragraph>
   <ul class="flex absolute bottom-2 left-2 right-2">
+    {url && (
+      <a href={url} target="_blank" rel="noopener noreferrer" class="flex-grow-0 border-b border-1 border-border hover:text-muted-foreground">
+        <li class="flex items-center gap-1 text-sm">
+          <LaptopIcon size={14} /> Website <span class="text-xs">↗</span>
+        </li>
+      </a>
+    )}
     {githubUrl && (
       <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="flex-grow-0 border-b border-1 border-border hover:text-muted-foreground">
         <li class="flex items-center gap-1 text-sm">

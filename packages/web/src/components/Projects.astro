@@ -28,15 +28,16 @@ const TYPE = "project";
     title="Budj"
     subTitle="About (Currently private)"
     text={`
-      This project is built with Next.js, tRPC, TypeScript, and Prisma w/ Postgresql.
+      This project is built with Next.js, tRPC, TypeScript, and Drizzle w/ Postgresql.
       It's a budgeting app for businesses in which they can track planned spend
       throughout their fiscal year. It's currently private, but if mentioned
       I'll be happy to share the code.
     `}
+    url="https://budj.edg.sh/"
   />
   <Card
     type={TYPE}
-    title="edg.sh"
+    title="edg.sh (Old)"
     subTitle="About"
     text={`
       This is a simple URL shortener I built a while back. It's built with
@@ -45,6 +46,19 @@ const TYPE = "project";
       authentication system.
     `}
     githubUrl="https://github.com/zuice/edg.sh"
+  />
+  <Card
+    type={TYPE}
+    title="edg.sh"
+    subTitle="About"
+    text={`
+      This is an experimental rewrite of edg.sh using Hono. It's a simple URL
+      shortener, but this time built with Bun, Hono, TypeScript, React (SSR),
+      and Postgresql. I was trying to experiment with Hono and see how it worked,
+      and so far I really like it.
+    `}
+    url="https://edg.sh"
+    githubUrl="https://github.com/zuice/edg.sh-hono"
   />
 </CardList>
 <small class="text-muted-foreground font-thin">Scrollable &rarr;</small>
