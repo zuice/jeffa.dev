@@ -1,0 +1,89 @@
+---
+import { GithubIcon, HammerIcon, LaptopIcon } from 'lucide-react';
+import { Separator } from '@/components/ui/separator';
+import Paragraph from '@/components/Paragraph.astro';
+import { cn } from '@/lib/utils';
+interface Props {
+  type: 'project' | 'experience';
+  title: string;
+  subTitle: string;
+  text: string;
+  url?: string;
+  githubUrl?: string;
+}
+const { type, title, subTitle, text, url, githubUrl } =
+  Astro.props satisfies Props;
+---
+
+<li
+  class="w-[25rem] h-[20rem] my-4 p-6 flex flex-col flex-shrink-0 gap-3 rounded-xl bg-background relative overflow-hidden max-sm:w-[calc(100%+2rem)]"
+>
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-background/50 to-background z-0 opacity-50"
+  >
+  </div>
+
+  <div
+    class={cn(
+      'absolute top-0 left-0 w-1 h-full',
+      type === 'project' ? 'bg-blue-500' : 'bg-amber-500',
+    )}
+  >
+  </div>
+
+  <h3 class="text-xl font-bold flex gap-2 items-center z-10">
+    <span
+      class={cn(
+        'p-1.5 rounded-md',
+        type === 'project'
+          ? 'bg-blue-500/10 text-blue-500'
+          : 'bg-amber-500/10 text-amber-500',
+      )}
+    >
+      {type === 'project' && <HammerIcon size={18} />}
+      {type === 'experience' && <LaptopIcon size={18} />}
+    </span>
+    {title}
+  </h3>
+
+  <h4 class="text-md text-muted-foreground font-medium">{subTitle}</h4>
+
+  <Separator className="bg-border/50" />
+
+  <Paragraph class="z-10 text-md leading-relaxed">
+    {text}
+  </Paragraph>
+
+  <ul class="flex mt-auto pt-4 gap-4 z-10">
+    {
+      url && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center gap-1.5 text-sm font-medium text-foreground/80 hover:text-primary transition-colors duration-200"
+        >
+          <span class="p-1 rounded-md bg-background shadow-sm">
+            <LaptopIcon size={14} />
+          </span>
+          Website <span class="text-xs ml-0.5">↗</span>
+        </a>
+      )
+    }
+
+    {
+      githubUrl && (
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="absolute bottom-0 left-25 flex-grow-0 border-b border-1 border-border hover:text-muted-foreground"
+        >
+          <li class="flex items-center gap-1 text-sm">
+            <GithubIcon size={14} /> GitHub <span class="text-xs">↗</span>
+          </li>
+        </a>
+      )
+    }
+  </ul>
+</li>

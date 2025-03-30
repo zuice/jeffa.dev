@@ -1,0 +1,66 @@
+---
+import { BriefcaseBusinessIcon } from 'lucide-react';
+import Title from '@/components/Title.astro';
+import CardList from '@/components/CardList.astro';
+import Card from '@/components/Card.astro';
+
+const TYPE = 'experience';
+---
+
+<Title subText="Where I've worked.">
+  <BriefcaseBusinessIcon /> Work Experience
+</Title>
+<CardList>
+  <Card
+    type={TYPE}
+    title="Synchrony Financial"
+    subTitle="Software Developer III | Feb 2025-Present"
+    text={`
+      Developing components for making payments using React.
+      Implement robust frontend UIs working closely with UI/UX with comprehensive testing through Cypress, 
+      Vitest, and React Testing Library to ensure reliability and performance.
+    `}
+  />
+  <Card
+    type={TYPE}
+    title="Visier"
+    subTitle="DX Contractor | Nov 2024-Present"
+    text={`
+      Creating and optimizing ServiceNow templates using HTML/CSS.
+      Preparing to contribute to React-based projects for analytical dashboard interfaces.
+      Working collaboratively with development teams to ensure consistent design implementation.
+    `}
+  />
+  <Card
+    type={TYPE}
+    title="ZOIC Labs"
+    subTitle="JavaScript Developer | May 2020-October 2024"
+    text={`
+      Played a key role in developing a satellite imagery visualization platform. 
+      Built a React/Node.js system for displaying, organizing, and playing back 
+      orbital Earth photography in draggable windows. Integrated with Python 
+      services for image processing and video export capabilities.
+    `}
+  />
+  <Card
+    type={TYPE}
+    title="Abenaki"
+    subTitle="Software Developer | Jan 2016-Jan 2020"
+    text={`
+      Spearheaded migration of legacy Access DB to a modern web application using 
+      React, Redux, Node.js, and PostgreSQL. Designed and implemented full-stack
+      architecture as sole developer, delivering significant performance and usability improvements.
+    `}
+  />
+  <Card
+    type={TYPE}
+    title="Skillsoft"
+    subTitle="Contractor | Sep 2018-Mar 2019"
+    text={`
+      Developed responsive HTML/CSS/JS templates for Marketo marketing automation platform. 
+      Created reusable components deployed across hundreds of customer-facing pages with 
+      thousands of daily users, collaborating closely with design team to ensure visual consistency.
+    `}
+  />
+</CardList>
+<small class="text-muted-foreground font-thin">Scrollable &rarr;</small>

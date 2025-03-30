@@ -1,0 +1,75 @@
+---
+import { WorkflowIcon } from 'lucide-react';
+
+import CardList from '@/components/CardList.astro';
+import Card from '@/components/Card.astro';
+import SubTitle from '@/components/Title.astro';
+
+const TYPE = 'project';
+---
+
+<SubTitle subText="What I've been working on lately.">
+  <WorkflowIcon /> Projects
+</SubTitle>
+<CardList>
+  <Card
+    type={TYPE}
+    title="next-betterauth"
+    subTitle="About"
+    text={`
+      I enjoy using Next-Auth for my authentication in Next.js, but you can't do many things
+      with it. There is no register/signup at all within it and no way to track if a user
+      has never signed up with you before. The aim of this project is to be a more flexible
+      Next-Auth.
+    `}
+    githubUrl="https://github.com/zuice/nextjs-betterauth"
+  />
+  <Card
+    type={TYPE}
+    title="hono-tailwind"
+    subTitle="About"
+    text={`
+      I was enjoying server rendering HTML and JSX with Hono (Express replacement)
+      but one of my painpoints was that I couldn't use Tailwind unless I spun
+      up a separate vite process on the side in development. So I built hono-tailwind
+      to automatically compile tailwind classes for me using postcss.
+    `}
+    githubUrl="https://github.com/zuice/hono-tailwind"
+  />
+  <Card
+    type={TYPE}
+    title="jeffa.dev"
+    subTitle="About"
+    text={`
+      This project is the site you're looking at right now. It's
+      semi-statically generated with Astro (static with some dynamic bits).
+    `}
+    githubUrl="https://github.com/zuice/jeffa.dev"
+  />
+  <Card
+    type={TYPE}
+    title="Budj"
+    subTitle="About (Currently private)"
+    text={`
+      This project is built with Next.js, tRPC, TypeScript, and Drizzle w/ Postgresql.
+      It's a budgeting app for businesses in which they can track planned spend
+      throughout their fiscal year. It's currently private, but if mentioned
+      I'll be happy to share the code.
+    `}
+  >
+    />
+    <Card
+      type={TYPE}
+      title="edg.sh (Old)"
+      subTitle="About"
+      text={`
+        This is a simple URL shortener I built a while back. It's built with
+        Next.js and Node.js/GraphQL. The stack is a bit outdated but I think
+        it still holds up well. I integrated with Stripe and used my hand-rolled
+        authentication system.
+      `}
+      githubUrl="https://github.com/zuice/edg.sh"
+    />
+  </Card>
+</CardList>
+<small class="text-muted-foreground font-thin">Scrollable &rarr;</small>
