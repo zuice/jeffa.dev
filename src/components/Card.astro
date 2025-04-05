@@ -54,7 +54,7 @@ const { type, title, subTitle, text, url, githubUrl } =
     {text}
   </Paragraph>
 
-  <ul class="flex mt-auto pt-4 gap-4 z-10">
+  <ul class="absolute bottom-0 left-25 flex mt-auto pt-4 gap-4 z-10">
     {
       url && (
         <a
@@ -77,7 +77,7 @@ const { type, title, subTitle, text, url, githubUrl } =
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="absolute bottom-0 left-25 flex-grow-0 border-b border-1 border-border hover:text-muted-foreground"
+          class="flex-grow-0 border-b border-1 border-border hover:text-muted-foreground"
         >
           <li class="flex items-center gap-1 text-sm">
             <GithubIcon size={14} /> GitHub <span class="text-xs">↗</span>
